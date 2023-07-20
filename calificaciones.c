@@ -66,3 +66,22 @@ float promedioCurso(int evaluacion) {
         return 0.0;
     }
 }
+
+void guardarCalificacionesEnArchivo() {
+    FILE *archivo;
+    archivo = fopen("calificaciones.txt", "a"); // Modo "a" para append
+
+    if (archivo == NULL) {
+        printf("Error al abrir el archivo.\n");
+        return;
+    }
+
+    for (int i = 0; i < NUM_ESTUDIANTES; i++) {
+        for (int j = 0; j < NUM_EVALUACIONES; j++) {
+            fprintf(archivo, "%d ", calificaciones[i][j]);
+        }
+        fprintf(archivo, "\n");
+    }
+
+    fclose(archivo);
+}
