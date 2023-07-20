@@ -14,9 +14,9 @@ void testCalificaciones() {
     asignarCalificacion(1, 5, 92);
 
     // Asignamos calificaciones para la evaluación 2
-    // Servira para probar promedioCurso, resultado debe ser 84.67
+    // Servira para probar promedioCurso, resultado debe ser 82.67
     asignarCalificacion(0, 2, 80);
-    asignarCalificacion(1, 2, 90);
+    asignarCalificacion(1, 2, 78);
     asignarCalificacion(2, 2, 85);
     asignarCalificacion(3, 2, 70);
     asignarCalificacion(4, 2, 95);
