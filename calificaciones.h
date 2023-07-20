@@ -11,4 +11,12 @@ extern int calificaciones[NUM_ESTUDIANTES][NUM_EVALUACIONES];
 // Prototipos de funciones
 void inicializarCalificaciones();
 
+int asignarCalificacion(int estudiante, int evaluacion, int calificacion);
+
+float promedioEstudiante(int estudiante);
+
+float promedioCurso(int evaluacion);
+
+void guardarCalificacionesEnArchivo();
+
 #endif
