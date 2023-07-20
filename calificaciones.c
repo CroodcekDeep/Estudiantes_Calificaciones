@@ -16,12 +16,33 @@ int asignarCalificacion(int estudiante, int evaluacion, int calificacion) {
         return 0; // Índices inválidos
     }
 
-    //Comprobar calificacion
+    //Comprobar calificación
     if (calificacion < 0 || calificacion > 100) {
         return 0; // Calificación inválida
     }
 
     calificaciones[estudiante][evaluacion] = calificacion;
     guardarCalificacionesEnArchivo();
-    return 1; // Asignación exitosa
+    return 1;
+}
+
+float promedioEstudiante(int estudiante) {
+    float suma = 0;
+    int numCalificaciones = 0;
+
+    for (int j = 0; j < NUM_EVALUACIONES; j++) {
+        // Si tiene una calificación de -1, no se cuenta
+        if (calificaciones[estudiante][j] != -1) {
+            suma += calificaciones[estudiante][j];
+            numCalificaciones++;
+        }
+    }
+
+    if (numCalificaciones > 0) {
+        // Calcular promedio
+        return suma / numCalificaciones;
+    } else {
+        // No hay calificaciones válidas
+        return 0.0;
+    }
 }
