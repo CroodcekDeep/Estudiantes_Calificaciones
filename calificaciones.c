@@ -46,3 +46,23 @@ float promedioEstudiante(int estudiante) {
         return 0.0;
     }
 }
+
+float promedioCurso(int evaluacion) {
+    float suma = 0;
+    int numCalificaciones = 0;
+
+    for (int i = 0; i < NUM_ESTUDIANTES; i++) {
+        // Si tiene una calificación de -1, no se cuenta
+        if (calificaciones[i][evaluacion] != -1) {
+            suma += calificaciones[i][evaluacion];
+            numCalificaciones++;
+        }
+    }
+
+    if (numCalificaciones > 0) {
+        return suma / numCalificaciones;
+    } else {
+        // No hay calificaciones válidas
+        return 0.0;
+    }
+}
